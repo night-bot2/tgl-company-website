@@ -1,54 +1,1222 @@
-<section class="hero">
-  <div class="hero-slides">
-    <img
-      class="active"
-      src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&amp;fit=crop&amp;w=2000&amp;q=85"
-      alt="물류 창고와 화물 작업 현장"
-    >
-    <img
-      src="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&amp;fit=crop&amp;w=2000&amp;q=85"
-      alt="해상 운송과 컨테이너"
-    >
-    <img
-      src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?auto=format&amp;fit=crop&amp;w=2000&amp;q=85"
-      alt="화물 물류 작업"
-    >
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="주식회사 티지엘 TGL. 수출포장, 국내운송, 보세운송, 국제운송, 포워딩, 수출입통관, 보세창고 전문 물류 서비스.">
+<meta name="theme-color" content="#102641">
+<title>TGL | 태한글로벌로지스틱스</title>
+
+<style>
+:root {
+  --navy: #102641;
+  --blue: #1767b1;
+  --sky: #58a5f5;
+  --ink: #172b43;
+  --muted: #718096;
+  --light: #f3f6fa;
+  --line: #e4eaf1;
+  --white: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: Arial, "Malgun Gothic", "맑은 고딕", sans-serif;
+  line-height: 1.75;
+  word-break: keep-all;
+}
+
+a { color: inherit; text-decoration: none; }
+button { font: inherit; }
+img { max-width: 100%; display: block; }
+
+.container {
+  width: min(1160px, 90%);
+  margin-inline: auto;
+}
+
+.section { padding: 100px 0; }
+
+.section-tag {
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.section-title {
+  margin: 12px 0 16px;
+  font-size: clamp(30px, 4vw, 43px);
+  line-height: 1.35;
+  letter-spacing: -1.5px;
+}
+
+.section-desc {
+  color: var(--muted);
+  max-width: 660px;
+  margin: 0;
+  font-size: 15px;
+}
+
+/* HEADER */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: 78px;
+  background: rgba(255,255,255,.96);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(220,228,238,.8);
+}
+
+.nav {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  color: var(--blue);
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
+.logo small {
+  display: block;
+  margin-left: 12px;
+  color: #718096;
+  font-size: 9px;
+  letter-spacing: 1.2px;
+  font-weight: 600;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 29px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.nav-links a:not(.nav-cta):hover { color: var(--blue); }
+
+.nav-cta {
+  padding: 10px 17px;
+  color: white;
+  background: var(--blue);
+  border-radius: 4px;
+}
+
+.menu-toggle {
+  display: none;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: white;
+  color: var(--navy);
+  padding: 7px 11px;
+  cursor: pointer;
+}
+
+/* HERO SLIDESHOW */
+
+.hero {
+  min-height: 680px;
+  height: min(760px, calc(100svh - 78px));
+  max-height: 820px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  isolation: isolate;
+  background: #102641;
+  color: white;
+}
+
+.hero-slides {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: #102641;
+}
+
+.hero-slides img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  transform: scale(1.07);
+  transition:
+    opacity 1.5s ease-in-out,
+    transform 7s ease;
+}
+
+.hero-slides img.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(8,24,43,.94) 0%,
+      rgba(8,24,43,.78) 48%,
+      rgba(8,24,43,.25) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(8,24,43,.5),
+      transparent 55%
+    );
+}
+
+.hero-content { padding: 75px 0 65px; }
+
+.hero-eyebrow {
+  color: #9bcaff;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.hero h1 {
+  margin: 25px 0 22px;
+  font-size: clamp(39px, 5.4vw, 67px);
+  line-height: 1.25;
+  letter-spacing: -2.5px;
+  font-weight: 800;
+}
+
+.hero h1 em {
+  font-style: normal;
+  color: #77b7ff;
+}
+
+.hero-copy {
+  max-width: 610px;
+  color: #d9e4f0;
+  font-size: 16px;
+  line-height: 2;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 33px;
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 49px;
+  padding: 12px 21px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 800;
+  transition: .2s;
+}
+
+.btn-primary {
+  background: #287fd1;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #4097ed;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  color: white;
+  border: 1px solid rgba(255,255,255,.55);
+  background: rgba(255,255,255,.05);
+}
+
+.btn-outline:hover { background: rgba(255,255,255,.14); }
+
+.hero-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 20px;
+  margin-top: 66px;
+}
+
+.hero-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+.hero-fact {
+  padding: 0 27px;
+  border-left: 1px solid rgba(255,255,255,.35);
+}
+
+.hero-fact:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+
+.hero-fact strong {
+  display: block;
+  font-size: 23px;
+  line-height: 1.5;
+}
+
+.hero-fact span {
+  color: #c0d1e3;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.slide-controls {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  flex-shrink: 0;
+}
+
+.slide-controls button {
+  width: 39px;
+  height: 39px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255,255,255,.6);
+  border-radius: 50%;
+  color: white;
+  background: rgba(255,255,255,.08);
+  cursor: pointer;
+  transition: .2s;
+}
+
+.slide-controls button:hover {
+  color: var(--navy);
+  background: white;
+}
+
+.slide-count {
+  font-size: 12px;
+  color: white;
+  font-variant-numeric: tabular-nums;
+}
+
+.slide-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: rgba(255,255,255,.18);
+}
+
+.slide-progress span {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: #69b2ff;
+}
+
+/* TRUST STRIP */
+
+.trust-strip {
+  border-bottom: 1px solid var(--line);
+  background: white;
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.trust-item {
+  padding: 26px 20px;
+  border-right: 1px solid var(--line);
+}
+
+.trust-item:first-child { border-left: 1px solid var(--line); }
+
+.trust-item strong {
+  display: block;
+  font-size: 16px;
+  letter-spacing: -.3px;
+}
+
+.trust-item span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* BUSINESS */
+
+.business { background: var(--light); }
+
+.business-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 25px;
+}
+
+.business-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 42px;
+}
+
+.business-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  overflow: hidden;
+  transition: transform .25s, box-shadow .25s;
+}
+
+.business-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px rgba(21,53,86,.09);
+}
+
+.business-image {
+  height: 210px;
+  overflow: hidden;
+  background: #dbe4ed;
+}
+
+.business-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .5s;
+}
+
+.business-card:hover .business-image img { transform: scale(1.05); }
+
+.business-body { padding: 25px; }
+
+.business-number {
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.business-body h3 {
+  margin: 8px 0;
+  font-size: 20px;
+  letter-spacing: -.5px;
+}
+
+.business-body p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* ABOUT */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 65px;
+  align-items: center;
+}
+
+.about-visual {
+  position: relative;
+  min-height: 420px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--navy);
+}
+
+.about-visual img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(9,28,49,.85), transparent 70%);
+}
+
+.about-visual-caption {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  z-index: 1;
+  color: white;
+}
+
+.about-visual-caption strong {
+  display: block;
+  font-size: 25px;
+}
+
+.about-visual-caption span {
+  font-size: 12px;
+  color: #d0dfed;
+}
+
+.about-text p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.about-points {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 13px;
+  margin-top: 28px;
+}
+
+.about-point {
+  padding: 17px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+}
+
+.about-point strong {
+  display: block;
+  font-size: 14px;
+}
+
+.about-point span {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+/* NETWORK */
+
+.network {
+  background: var(--navy);
+  color: white;
+}
+
+.network .section-desc { color: #c0cfdf; }
+.network .section-tag { color: #8ec5ff; }
+
+.network-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-top: 38px;
+}
+
+.network-card {
+  padding: 26px 22px;
+  border: 1px solid rgba(255,255,255,.17);
+  border-radius: 5px;
+  background: rgba(255,255,255,.035);
+}
+
+.network-card .city {
+  color: #8ec5ff;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.network-card h3 { margin: 12px 0 8px; font-size: 20px; }
+
+.network-card p {
+  margin: 0;
+  color: #c0cfdf;
+  font-size: 12px;
+}
+
+/* CONTACT */
+
+.contact-section {
+  background: #edf3f9;
+  text-align: center;
+}
+
+.contact-section .section-desc { margin-inline: auto; }
+
+.contact-box {
+  margin-top: 35px;
+  padding: 40px 25px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.contact-label {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.contact-phone {
+  display: inline-block;
+  margin: 5px 0;
+  color: var(--blue);
+  font-size: clamp(30px, 5vw, 43px);
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+.contact-email { color: #52677e; font-size: 14px; }
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.contact-actions .btn-outline-dark {
+  border: 1px solid #d5dfeb;
+  color: var(--ink);
+  background: white;
+}
+
+/* FOOTER */
+
+.footer {
+  padding: 35px 0;
+  background: #0b1b2e;
+  color: #afbed0;
+  font-size: 12px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  align-items: start;
+}
+
+.footer .logo { color: white; }
+
+.footer p { margin: 10px 0 0; }
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+  .nav-links { gap: 15px; }
+  .nav-links a { font-size: 12px; }
+  .logo small { display: none; }
+  .business-grid { grid-template-columns: repeat(2, 1fr); }
+  .about-grid { gap: 35px; }
+  .network-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero { min-height: 670px; }
+}
+
+@media (max-width: 650px) {
+  .section { padding: 70px 0; }
+  .header { height: 68px; }
+  .logo { font-size: 29px; }
+  .menu-toggle { display: block; }
+
+  .nav {
+    position: relative;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 58px;
+    left: -5.5%;
+    width: 111%;
+    padding: 20px 5%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: white;
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 15px 25px rgba(10,35,60,.08);
+  }
+
+  .nav-links.open { display: flex; }
+  .nav-links a { padding: 10px 0; font-size: 14px; }
+  .nav-links .nav-cta { padding: 10px 14px; text-align: center; }
+
+  .hero {
+    height: auto;
+    min-height: 730px;
+    max-height: none;
+    align-items: center;
+  }
+
+  .hero-slides img { object-position: 58% center; }
+
+  .hero-overlay {
+    background: linear-gradient(
+      90deg,
+      rgba(8,24,43,.88),
+      rgba(8,24,43,.52)
+    );
+  }
+
+  .hero-content { padding: 75px 0 50px; }
+  .hero h1 { font-size: clamp(37px, 10vw, 50px); letter-spacing: -1.7px; }
+  .hero-copy { font-size: 14px; }
+  .hero-bottom { align-items: start; flex-direction: column; margin-top: 48px; }
+  .hero-fact { padding: 0 14px; }
+  .hero-fact:first-child { padding-left: 0; }
+  .hero-fact strong { font-size: 18px; }
+  .hero-fact span { font-size: 9px; }
+  .slide-controls { align-self: flex-end; }
+  .trust-grid { grid-template-columns: 1fr 1fr; }
+  .trust-item { padding: 19px 14px; }
+  .trust-item:nth-child(3) { border-left: 1px solid var(--line); }
+  .business-heading { align-items: start; flex-direction: column; }
+  .business-grid { grid-template-columns: 1fr; gap: 16px; }
+  .business-image { height: 220px; }
+  .about-grid { grid-template-columns: 1fr; }
+  .about-visual { min-height: 330px; }
+  .about-points { gap: 9px; }
+  .about-point { padding: 13px; }
+  .network-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .network-card { padding: 18px 14px; }
+  .network-card h3 { font-size: 17px; }
+  .contact-box { padding: 30px 15px; }
+  .footer-top { flex-direction: column; }
+}
+
+/* 움직임 최소화 설정 지원 */
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+  <nav class="nav container">
+    <a class="logo" href="#home" aria-label="TGL 홈">
+      TGL
+      <small>TAEHAN GLOBAL LOGISTICS</small>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle"
+      aria-label="메뉴 열기" aria-expanded="false">
+      ☰
+    </button>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#about">회사소개</a>
+      <a href="#business">사업분야</a>
+      <a href="#network">지사안내</a>
+      <a href="https://www.tgl.co.kr/" target="_blank" rel="noopener">기존 홈페이지</a>
+      <a href="#contact" class="nav-cta">견적 문의 ↗</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <!-- MAIN SLIDESHOW -->
+
+  <section class="hero" id="home">
+    <div class="hero-slides" aria-hidden="true">
+      <img class="active"
+        src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&amp;fit=crop&amp;w=2000&amp;q=85"
+        alt="">
+      <img
+        src="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&amp;fit=crop&amp;w=2000&amp;q=85"
+        alt="">
+      <img
+        src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?auto=format&amp;fit=crop&amp;w=2000&amp;q=85"
+        alt="">
+    </div>
+
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-content">
+      <div class="hero-eyebrow">
+        TAEHAN GLOBAL LOGISTICS · SINCE 2000
+      </div>
+
+      <h1>
+        물류의 모든 과정,<br>
+        <em>TGL</em>이 함께합니다.
+      </h1>
+
+      <p class="hero-copy">
+        수출포장부터 국내운송, 국제물류, 수출입통관, 보세창고까지.<br>
+        수출입 물류에 필요한 서비스를 하나의 흐름으로 연결합니다.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">
+          물류 견적 문의하기 ↗
+        </a>
+        <a href="#business" class="btn btn-outline">
+          사업분야 알아보기 ↓
+        </a>
+      </div>
+
+      <div class="hero-bottom">
+        <div class="hero-facts">
+          <div class="hero-fact">
+            <strong>2000</strong>
+            <span>ESTABLISHED</span>
+          </div>
+          <div class="hero-fact">
+            <strong>ONE-STOP</strong>
+            <span>LOGISTICS SERVICE</span>
+          </div>
+          <div class="hero-fact">
+            <strong>TGL</strong>
+            <span>YOUR LOGISTICS PARTNER</span>
+          </div>
+        </div>
+
+        <div class="slide-controls">
+          <button type="button" id="prevSlide" aria-label="이전 사진">←</button>
+          <span class="slide-count" id="slideCount">01 / 03</span>
+          <button type="button" id="nextSlide" aria-label="다음 사진">→</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-progress">
+      <span id="slideProgress"></span>
+    </div>
+  </section>
+
+  <!-- KEY SERVICES -->
+
+  <div class="trust-strip">
+    <div class="container trust-grid">
+      <div class="trust-item">
+        <strong>수출포장 전문 서비스</strong>
+        <span>Export Packing</span>
+      </div>
+      <div class="trust-item">
+        <strong>국내 · 보세운송</strong>
+        <span>Domestic Transportation</span>
+      </div>
+      <div class="trust-item">
+        <strong>국제운송 · 포워딩</strong>
+        <span>International Logistics</span>
+      </div>
+      <div class="trust-item">
+        <strong>통관 · 보세창고</strong>
+        <span>Customs & Warehouse</span>
+      </div>
+    </div>
   </div>
 
-  <div class="wrap">
-    <div class="eyebrow">TAEHAN GLOBAL LOGISTICS</div>
+  <!-- BUSINESS -->
 
-    <h1>물류의 모든 과정,<br>TGL이 함께합니다.</h1>
+  <section class="section business" id="business">
+    <div class="container">
+      <div class="business-heading">
+        <div>
+          <div class="section-tag">OUR BUSINESS</div>
+          <h2 class="section-title">물류의 시작부터 끝까지</h2>
+          <p class="section-desc">
+            화물의 특성과 고객의 상황에 맞춰 필요한 물류 서비스를 연결합니다.
+          </p>
+        </div>
+      </div>
 
-    <p>
-      수출포장부터 국내운송, 국제물류, 수출입통관, 보세창고까지.
-      수출입 물류에 필요한 서비스를 하나의 흐름으로 연결합니다.
-    </p>
+      <div class="business-grid">
 
-    <div class="actions">
-      <a class="btn btn-blue" href="#contact">물류 견적 문의하기 ↗</a>
-      <a class="btn btn-white" href="#services">사업분야 알아보기 ↓</a>
+        <article class="business-card">
+          <div class="business-image">
+            <img loading="lazy"
+              src="https://images.unsplash.com/photo-1607166452427-7e4477079cb9?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
+              alt="산업용 수출포장과 목재 포장 작업">
+          </div>
+          <div class="business-body">
+            <div class="business-number">01 / EXPORT PACKING</div>
+            <h3>수출포장 · 쇼링</h3>
+            <p>산업기계와 다양한 화물의 수출포장, 출장포장 및 컨테이너 내부 고정 작업을 지원합니다.</p>
+          </div>
+        </article>
+
+        <article class="business-card">
+          <div class="business-image">
+            <img loading="lazy"
+              src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
+              alt="화물 운송 트럭">
+          </div>
+          <div class="business-body">
+            <div class="business-number">02 / TRANSPORT</div>
+            <h3>국내 · 보세운송</h3>
+            <p>화물 픽업부터 항만과 지정 장소까지, 국내운송 및 보세운송 서비스를 제공합니다.</p>
+          </div>
+        </article>
+
+        <article class="business-card">
+          <div class="business-image">
+            <img loading="lazy"
+              src="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
+              alt="국제 해상 물류와 컨테이너">
+          </div>
+          <div class="business-body">
+            <div class="business-number">03 / FORWARDING</div>
+            <h3>국제운송 · 포워딩</h3>
+            <p>해상 및 항공 수출입 운송과 해외 물류 파트너 연계를 지원합니다.</p>
+          </div>
+        </article>
+
+        <article class="business-card">
+          <div class="business-image">
+            <img loading="lazy"
+              src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
+              alt="물류 창고 작업 현장">
+          </div>
+          <div class="business-body">
+            <div class="business-number">04 / WAREHOUSE</div>
+            <h3>보세창고 · 보관</h3>
+            <p>화물의 입출고와 보관, 후속 운송 일정에 맞춘 물류 연계 서비스를 제공합니다.</p>
+          </div>
+        </article>
+
+        <article class="business-card">
+          <div class="business-image">
+            <img loading="lazy"
+              src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
+              alt="화물 운송 및 물류 운영">
+          </div>
+          <div class="business-body">
+            <div class="business-number">05 / CUSTOMS</div>
+            <h3>수출입통관</h3>
+            <p>수출입 화물의 원활한 통관 진행을 위한 관련 업무를 지원합니다.</p>
+          </div>
+        </article>
+
+        <article class="business-card">
+          <div class="business-image">
+            <img loading="lazy"
+              src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
+              alt="물류센터의 화물 처리">
+          </div>
+          <div class="business-body">
+            <div class="business-number">06 / LOGISTICS</div>
+            <h3>맞춤형 물류 솔루션</h3>
+            <p>화물의 크기와 중량, 운송 조건을 고려해 적합한 물류 방안을 검토합니다.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+
+  <section class="section" id="about">
+    <div class="container about-grid">
+
+      <div class="about-visual">
+        <img loading="lazy"
+          src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&amp;fit=crop&amp;w=1200&amp;q=85"
+          alt="물류 창고와 화물 관리 현장">
+        <div class="about-visual-caption">
+          <strong>TGL Logistics</strong>
+          <span>Connecting Every Step of Logistics</span>
+        </div>
+      </div>
+
+      <div class="about-text">
+        <div class="section-tag">ABOUT TGL</div>
+        <h2 class="section-title">
+          경험을 바탕으로<br>
+          신뢰를 운송합니다.
+        </h2>
+        <p>
+          주식회사 티지엘은 2000년 설립 이후 수출입 물류 서비스를 제공해 왔습니다.
+          대전 본사를 중심으로 서울, 부산, 인천 거점과 연계하여
+          다양한 물류 업무를 지원합니다.
+        </p>
+        <p>
+          수출포장과 운송, 포워딩, 통관 및 보관까지.
+          화물의 이동에 필요한 여러 과정을 연결하는 물류 파트너를 지향합니다.
+        </p>
+
+        <div class="about-points">
+          <div class="about-point">
+            <strong>통합 물류 서비스</strong>
+            <span>다양한 수출입 업무 연계</span>
+          </div>
+          <div class="about-point">
+            <strong>거점 간 업무 협력</strong>
+            <span>대전 · 서울 · 부산 · 인천</span>
+          </div>
+          <div class="about-point">
+            <strong>화물 맞춤형 검토</strong>
+            <span>화물 특성에 따른 운송 계획</span>
+          </div>
+          <div class="about-point">
+            <strong>현장 중심 물류</strong>
+            <span>포장 · 운송 · 보관 연계</span>
+          </div>
+        </div>
+
+        <div style="margin-top:26px">
+          <a class="btn btn-primary"
+             href="https://www.tgl.co.kr/"
+             target="_blank" rel="noopener">
+            TGL 더 알아보기 ↗
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BRANCHES -->
+
+  <section class="section network" id="network">
+    <div class="container">
+      <div class="section-tag">OUR NETWORK</div>
+      <h2 class="section-title">각 거점을 연결하는 물류 네트워크</h2>
+      <p class="section-desc">
+        각 지역의 업무 특성을 바탕으로 수출입 물류 과정을 연계합니다.
+      </p>
+
+      <div class="network-grid">
+        <article class="network-card">
+          <div class="city">HEAD OFFICE</div>
+          <h3>대전 본사</h3>
+          <p>수출포장, 국내·보세운송, 국제운송, 통관 및 보관 업무</p>
+        </article>
+
+        <article class="network-card">
+          <div class="city">SEOUL</div>
+          <h3>서울 지사</h3>
+          <p>포워딩, 해외 파트너 소통, 수출입 일정 관리</p>
+        </article>
+
+        <article class="network-card">
+          <div class="city">BUSAN</div>
+          <h3>부산 지사</h3>
+          <p>컨테이너 및 LCL 수출입 운송, 항만 운송 업무</p>
+        </article>
+
+        <article class="network-card">
+          <div class="city">INCHEON</div>
+          <h3>인천 지사</h3>
+          <p>수입 보세운송, 컨테이너 픽업 및 항만 관련 업무</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+
+  <section class="section contact-section" id="contact">
+    <div class="container">
+      <div class="section-tag">CONTACT US</div>
+      <h2 class="section-title">새로운 물류 파트너를 찾고 계신가요?</h2>
+      <p class="section-desc">
+        화물의 종류와 중량, 출발지와 도착지 등 운송 조건을 알려주시면
+        상담을 도와드리겠습니다.
+      </p>
+
+      <div class="contact-box">
+        <div class="contact-label">전화 상담</div>
+        <a class="contact-phone" href="tel:0429311188">042-931-1188</a>
+        <div class="contact-email">
+          <a href="mailto:sales@tgl.or.kr">sales@tgl.or.kr</a>
+        </div>
+
+        <div class="contact-actions">
+          <a class="btn btn-primary"
+             href="https://open.kakao.com/o/sjcZB9Bi"
+             target="_blank" rel="noopener">
+            카카오톡 문의 ↗
+          </a>
+          <a class="btn btn-outline-dark" href="mailto:sales@tgl.or.kr">
+            이메일 문의 ↗
+          </a>
+          <a class="btn btn-outline-dark"
+             href="https://www.tgl.co.kr/"
+             target="_blank" rel="noopener">
+            기존 홈페이지 ↗
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-top">
+    <div>
+      <a href="#home" class="logo">TGL</a>
+      <p>주식회사 티지엘 | TAEHAN GLOBAL LOGISTICS</p>
+      <p>전화 042-931-1188 · 이메일 sales@tgl.or.kr</p>
+      <p>© TGL. All rights reserved.</p>
     </div>
 
-    <div class="stats">
-      <div class="stat">
-        <strong>2000</strong>
-        <span>ESTABLISHED</span>
-      </div>
-      <div class="stat">
-        <strong>ONE-STOP</strong>
-        <span>INTEGRATED LOGISTICS</span>
-      </div>
-      <div class="stat">
-        <strong>TGL</strong>
-        <span>YOUR LOGISTICS PARTNER</span>
-      </div>
-    </div>
-
-    <div class="slide-controls">
-      <button type="button" id="prevSlide" aria-label="이전 사진">←</button>
-      <span class="slide-count" id="slideCount">01 / 03</span>
-      <button type="button" id="nextSlide" aria-label="다음 사진">→</button>
+    <div class="footer-links">
+      <a href="#about">회사소개</a>
+      <a href="#business">사업분야</a>
+      <a href="#network">지사안내</a>
+      <a href="#contact">견적문의</a>
     </div>
   </div>
-</section>
+</footer>
+
+<script>
+/* MOBILE MENU */
+
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", () => {
+  const opened = navLinks.classList.toggle("open");
+  menuToggle.setAttribute("aria-expanded", String(opened));
+  menuToggle.textContent = opened ? "✕" : "☰";
+});
+
+navLinks.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.textContent = "☰";
+  });
+});
+
+/* HERO SLIDESHOW */
+
+const slides = Array.from(
+  document.querySelectorAll(".hero-slides img")
+);
+const slideCount = document.getElementById("slideCount");
+const slideProgress = document.getElementById("slideProgress");
+const hero = document.querySelector(".hero");
+
+let currentSlide = 0;
+let slideTimer = null;
+let progressTimer = null;
+let startedAt = 0;
+
+const slideDuration = 5000;
+
+function showSlide(index) {
+  slides[currentSlide].classList.remove("active");
+
+  currentSlide = (index + slides.length) % slides.length;
+  slides[currentSlide].classList.add("active");
+
+  slideCount.textContent =
+    String(currentSlide + 1).padStart(2, "0") +
+    " / " +
+    String(slides.length).padStart(2, "0");
+
+  resetProgress();
+}
+
+function resetProgress() {
+  startedAt = Date.now();
+  slideProgress.style.transition = "none";
+  slideProgress.style.width = "0%";
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      slideProgress.style.transition =
+        `width ${slideDuration}ms linear`;
+      slideProgress.style.width = "100%";
+    });
+  });
+}
+
+function stopSlideshow() {
+  clearInterval(slideTimer);
+  clearInterval(progressTimer);
+}
+
+function startSlideshow() {
+  stopSlideshow();
+  resetProgress();
+
+  slideTimer = setInterval(() => {
+    showSlide(currentSlide + 1);
+  }, slideDuration);
+}
+
+document.getElementById("prevSlide").addEventListener("click", () => {
+  showSlide(currentSlide - 1);
+  startSlideshow();
+});
+
+document.getElementById("nextSlide").addEventListener("click", () => {
+  showSlide(currentSlide + 1);
+  startSlideshow();
+});
+
+/* Pause automatic movement when the tab is hidden */
+
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) {
+    stopSlideshow();
+  } else {
+    startSlideshow();
+  }
+});
+
+/* Respect reduced-motion preferences */
+
+if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  stopSlideshow();
+  slideProgress.style.display = "none";
+} else {
+  startSlideshow();
+}
+
+/* Pause when hovering the hero on desktop */
+
+hero.addEventListener("mouseenter", () => {
+  clearInterval(slideTimer);
+});
+
+hero.addEventListener("mouseleave", () => {
+  if (!document.hidden &&
+      !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    startSlideshow();
+  }
+});
+</script>
+
+</body>
+</html>

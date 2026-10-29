@@ -1,226 +1,54 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="주식회사 티지엘(TGL) - 수출포장, 국내보세운송, 국제운송, 수출입통관, 보세창고">
-  <title>TGL | 태한글로벌로지스틱스</title>
-  <style>
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: Arial, "Malgun Gothic", sans-serif;
-      color: #172b45;
-      line-height: 1.7;
-    }
-    a { color: inherit; text-decoration: none; }
-    .wrap { width: min(1120px, 90%); margin: auto; }
-    header {
-      height: 78px;
-      display: flex;
-      align-items: center;
-      background: white;
-      border-bottom: 1px solid #e7edf3;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-    nav { display: flex; align-items: center; justify-content: space-between; }
-    .logo { font-size: 30px; font-weight: 900; color: #1559a6; letter-spacing: 2px; }
-    .menu { display: flex; gap: 30px; align-items: center; font-size: 14px; }
-    .contact {
-      background: #1559a6; color: white; padding: 11px 18px;
-      border-radius: 5px; font-weight: bold;
-    }
-    .hero {
-      background: linear-gradient(120deg, #102844, #174f87);
-      color: white; padding: 100px 0 90px;
-      position: relative; overflow: hidden;
-    }
-    .hero:after {
-      content: "TGL"; position: absolute; right: 4%; bottom: -100px;
-      font-size: clamp(180px, 30vw, 400px); font-weight: 900;
-      color: rgba(255,255,255,.045); line-height: 1;
-    }
-    .eyebrow { color: #8ec5ff; font-size: 13px; letter-spacing: 3px; font-weight: bold; }
-    h1 { font-size: clamp(36px, 5vw, 60px); line-height: 1.3; margin: 22px 0; }
-    .hero p { color: #d4e1f0; font-size: 17px; max-width: 590px; }
-    .actions { display: flex; gap: 12px; margin-top: 32px; flex-wrap: wrap; }
-    .btn { display: inline-block; padding: 13px 22px; border-radius: 5px; font-weight: bold; }
-    .btn-blue { background: #3988e8; color: white; }
-    .btn-white { border: 1px solid #9db7d2; color: white; }
-    .stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 60px; max-width: 650px; }
-    .stat { border-left: 2px solid #6aaaf3; padding-left: 16px; }
-    .stat strong { display: block; font-size: 23px; }
-    .stat span { font-size: 12px; color: #c3d6e9; }
-    section { padding: 85px 0; }
-    .section-label { color: #2875c5; font-size: 12px; font-weight: bold; letter-spacing: 3px; }
-    h2 { font-size: 34px; line-height: 1.35; margin: 10px 0 14px; }
-    .intro { color: #69798b; max-width: 650px; }
-    .services { background: #f5f8fc; }
-    .cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin-top: 35px; }
-    .card {
-      background: white; padding: 28px; border: 1px solid #e4eaf1;
-      border-radius: 8px; transition: .2s;
-    }
-    .card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px #173b6112; }
-    .number { color: #3988e8; font-size: 13px; font-weight: bold; }
-    .card h3 { margin: 12px 0 8px; font-size: 20px; }
-    .card p { color: #68788a; font-size: 14px; margin-bottom: 0; }
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
-    .about-panel {
-      background: linear-gradient(145deg, #123152, #2464a1);
-      color: white; border-radius: 10px; padding: 38px;
-    }
-    .about-panel p { color: #d7e6f5; }
-    .about-list { padding: 0; list-style: none; }
-    .about-list li { padding: 12px 0; border-bottom: 1px solid #ffffff30; }
-    .contact-section { background: #edf4fb; text-align: center; }
-    .contact-box { background: white; border-radius: 10px; padding: 35px 20px; margin-top: 30px; }
-    .phone { font-size: clamp(25px, 4vw, 36px); color: #1559a6; font-weight: bold; }
-    footer { background: #10233a; color: #b9c8d8; padding: 32px 0; font-size: 12px; }
-    footer .logo { color: white; font-size: 25px; }
-    @media(max-width: 760px) {
-      header { height: auto; padding: 15px 0; }
-      nav { align-items: flex-start; gap: 12px; flex-direction: column; }
-      .menu { gap: 14px; flex-wrap: wrap; font-size: 12px; }
-      .menu .contact { padding: 7px 10px; }
-      .hero { padding: 70px 0; }
-      .stats { gap: 12px; }
-      .stat strong { font-size: 19px; }
-      .cards { grid-template-columns: 1fr; }
-      .about-grid { grid-template-columns: 1fr; gap: 25px; }
-      section { padding: 60px 0; }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <nav class="wrap">
-      <a class="logo" href="#">TGL</a>
-      <div class="menu">
-        <a href="#about">회사소개</a>
-        <a href="#services">사업분야</a>
-        <a href="#network">물류 네트워크</a>
-        <a href="#contact" class="contact">견적 문의 ↗</a>
-      </div>
-    </nav>
-  </header>
+<section class="hero">
+  <div class="hero-slides">
+    <img
+      class="active"
+      src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&amp;fit=crop&amp;w=2000&amp;q=85"
+      alt="물류 창고와 화물 작업 현장"
+    >
+    <img
+      src="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&amp;fit=crop&amp;w=2000&amp;q=85"
+      alt="해상 운송과 컨테이너"
+    >
+    <img
+      src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?auto=format&amp;fit=crop&amp;w=2000&amp;q=85"
+      alt="화물 물류 작업"
+    >
+  </div>
 
-  <main>
-    <section class="hero">
-      <div class="wrap">
-        <div class="eyebrow">TAEHAN GLOBAL LOGISTICS</div>
-        <h1>물류의 모든 과정,<br>TGL이 함께합니다.</h1>
-        <p>
-          수출포장부터 국내운송, 국제물류, 수출입통관, 보세창고까지.
-          수출입 물류에 필요한 서비스를 하나의 흐름으로 연결합니다.
-        </p>
-        <div class="actions">
-          <a class="btn btn-blue" href="#contact">물류 견적 문의하기 ↗</a>
-          <a class="btn btn-white" href="#services">사업분야 알아보기 ↓</a>
-        </div>
-        <div class="stats">
-          <div class="stat"><strong>2000</strong><span>ESTABLISHED</span></div>
-          <div class="stat"><strong>ONE-STOP</strong><span>INTEGRATED LOGISTICS</span></div>
-          <div class="stat"><strong>TGL</strong><span>YOUR LOGISTICS PARTNER</span></div>
-        </div>
-      </div>
-    </section>
+  <div class="wrap">
+    <div class="eyebrow">TAEHAN GLOBAL LOGISTICS</div>
 
-    <section class="services" id="services">
-      <div class="wrap">
-        <div class="section-label">OUR BUSINESS</div>
-        <h2>물류의 시작부터 끝까지</h2>
-        <p class="intro">화물의 특성과 고객의 상황에 맞춰 필요한 물류 서비스를 연결합니다.</p>
-        <div class="cards">
-          <article class="card">
-            <div class="number">01 / PACKING</div>
-            <h3>수출포장 · 쇼링</h3>
-            <p>산업기계 및 다양한 화물의 수출포장, 출장포장과 컨테이너 내부 고정 작업을 지원합니다.</p>
-          </article>
-          <article class="card">
-            <div class="number">02 / TRANSPORT</div>
-            <h3>국내 · 보세운송</h3>
-            <p>화물 픽업부터 항만 및 지정 장소까지 국내운송과 보세운송 서비스를 제공합니다.</p>
-          </article>
-          <article class="card">
-            <div class="number">03 / FORWARDING</div>
-            <h3>국제운송 · 포워딩</h3>
-            <p>해상 및 항공 수출입 운송과 해외 물류 파트너 연계를 지원합니다.</p>
-          </article>
-          <article class="card">
-            <div class="number">04 / CUSTOMS</div>
-            <h3>수출입통관</h3>
-            <p>수출입 화물의 원활한 통관 진행을 위한 관련 업무를 지원합니다.</p>
-          </article>
-          <article class="card">
-            <div class="number">05 / WAREHOUSE</div>
-            <h3>보세창고 · 보관</h3>
-            <p>물류 일정에 맞춘 화물 보관 및 운송 연계 서비스를 제공합니다.</p>
-          </article>
-          <article class="card">
-            <div class="number">06 / LOGISTICS</div>
-            <h3>맞춤형 물류 솔루션</h3>
-            <p>화물의 크기와 중량, 운송 조건을 고려해 효율적인 물류 방안을 검토합니다.</p>
-          </article>
-        </div>
-      </div>
-    </section>
+    <h1>물류의 모든 과정,<br>TGL이 함께합니다.</h1>
 
-    <section id="about">
-      <div class="wrap about-grid">
-        <div>
-          <div class="section-label">ABOUT TGL</div>
-          <h2>경험을 바탕으로<br>신뢰를 운송합니다.</h2>
-          <p class="intro">
-            주식회사 티지엘은 2000년 설립 이후 수출입 물류 서비스를 제공해 왔습니다.
-            대전 본사를 중심으로 각 거점과 협력해 화물의 이동을 지원합니다.
-          </p>
-          <p><a class="btn btn-blue" href="https://www.tgl.co.kr/" target="_blank" rel="noopener">기존 홈페이지 방문 ↗</a></p>
-        </div>
-        <div class="about-panel" id="network">
-          <div class="eyebrow">OUR NETWORK</div>
-          <h2>연결되는 물류 네트워크</h2>
-          <p>각 거점의 업무를 연계해 수출입 과정의 효율성을 높입니다.</p>
-          <ul class="about-list">
-            <li><strong>대전 본사</strong> — 수출포장 · 운송 · 통관 · 보관</li>
-            <li><strong>서울 지사</strong> — 국제운송 · 포워딩</li>
-            <li><strong>부산 지사</strong> — 컨테이너 · LCL 운송</li>
-            <li><strong>인천 지사</strong> — 수입 보세운송 · 항만 업무</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    <p>
+      수출포장부터 국내운송, 국제물류, 수출입통관, 보세창고까지.
+      수출입 물류에 필요한 서비스를 하나의 흐름으로 연결합니다.
+    </p>
 
-    <section class="contact-section" id="contact">
-      <div class="wrap">
-        <div class="section-label">CONTACT US</div>
-        <h2>물류 상담이 필요하신가요?</h2>
-        <p class="intro" style="margin: 0 auto">
-          화물 정보와 운송 조건을 알려주시면 상담을 도와드리겠습니다.
-        </p>
-        <div class="contact-box">
-          <div>전화 문의</div>
-          <a class="phone" href="tel:0429311188">042-931-1188</a>
-          <p><a href="mailto:sales@tgl.or.kr">sales@tgl.or.kr</a></p>
-          <div class="actions" style="justify-content:center">
-            <a class="btn btn-blue" href="https://open.kakao.com/o/sjcZB9Bi" target="_blank" rel="noopener">카카오톡 문의 ↗</a>
-            <a class="btn" style="border:1px solid #ccd8e5" href="https://www.tgl.co.kr/" target="_blank" rel="noopener">TGL 홈페이지 ↗</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrap">
-      <div class="logo">TGL</div>
-      <p>주식회사 티지엘 | TAEHAN GLOBAL LOGISTICS</p>
-      <p>전화 042-931-1188 · 이메일 sales@tgl.or.kr</p>
-      <p>© TGL. All rights reserved.</p>
+    <div class="actions">
+      <a class="btn btn-blue" href="#contact">물류 견적 문의하기 ↗</a>
+      <a class="btn btn-white" href="#services">사업분야 알아보기 ↓</a>
     </div>
-  </footer>
-</body>
-</html>
+
+    <div class="stats">
+      <div class="stat">
+        <strong>2000</strong>
+        <span>ESTABLISHED</span>
+      </div>
+      <div class="stat">
+        <strong>ONE-STOP</strong>
+        <span>INTEGRATED LOGISTICS</span>
+      </div>
+      <div class="stat">
+        <strong>TGL</strong>
+        <span>YOUR LOGISTICS PARTNER</span>
+      </div>
+    </div>
+
+    <div class="slide-controls">
+      <button type="button" id="prevSlide" aria-label="이전 사진">←</button>
+      <span class="slide-count" id="slideCount">01 / 03</span>
+      <button type="button" id="nextSlide" aria-label="다음 사진">→</button>
+    </div>
+  </div>
+</section>
